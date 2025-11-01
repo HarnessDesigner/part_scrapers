@@ -32,7 +32,7 @@ response = requests.post('https://aptivcatalog.searchapi-na.hawksearch.com/api/v
 
 data = response.json()
 
-import json
+import json  # NOQA
 
 with open('facets.json', 'w') as f:
     f.write(json.dumps(data['Facets'], indent=4))
@@ -41,7 +41,7 @@ options = {}
 
 page_count = data['Pagination']['NofPages']
 
-import time
+import time  # NOQA
 
 results = []
 
@@ -64,7 +64,6 @@ for i in range(1, page_count):
     for result in data['Results']:
         results.append(result['Document'])
 
-import os
 
 connectors = []
 seals = []

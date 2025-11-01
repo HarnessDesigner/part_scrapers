@@ -50,6 +50,7 @@ feature_codes = {
 
 '''
 
+
 def read_compat_parts(products):
     compat_parts = []
 
@@ -190,6 +191,7 @@ def read_products(products):
 
     return product_output
 
+
 '''
 ak_bmsc=1A4E94700E9BCB529B5C2C0AA7F55224~000000000000000000000000000000~YAAQpFkhF/DYt6WZAQAA5a9H0R0yHpE5EIF7NhwgRjlDEHufIiFDktdFszRa50LYFtQ1rc9r/tnMym5us3cYHCd4RxtY4e4q/xWtY7tUzX6EQNfBbe1ed+jWghxUTid2qph6cDOm3Z+lznyVuLzmjvA0AJ3jdFgIDtvO7oTSFZ+GaOFi4ul6NyykndAXrBA/13ezuG0F73rgKmm0FGwMatN71CYfibrcFM0DGK0ex+H5wKrdMT5NPsa6n4Dv3YISXLS1elvt+riTvCMq3hGZFGGu0wXYyX31wFjjEh/lWpGTs+lqihkGRxAFCTzVvNzorBrDdxZ5WmcdjYvdv1EEYxXiXBjNU4VGu9bHtOExibxNlkmq8yDZpeSZxLJXbpwLYJb14FfLwq0=; 
 Domain=.te.com; 
@@ -203,6 +205,7 @@ Expires=Sat, 11 Oct 2025 03:19:18 GMT;
 Max-Age=0; 
 Secure
 '''
+
 
 def handlecookie(response):
     if 'Set-Cookie' in response.headers:
@@ -222,7 +225,8 @@ def handlecookie(response):
         cookie = '; '.join(cookie)
         header['Cookie'] = cookie
 
-import os
+
+import os  # NOQA
 
 
 def get_url(last, **kwargs):
@@ -277,7 +281,7 @@ def get_category(filename, start_num=0, file_num=None, **kwargs):
     return products
 
 
-import json
+import json  # NOQA
 
 
 def get_count(filename):
@@ -306,7 +310,7 @@ def get_count(filename):
 connectors = get_category(*get_count('new_connectors.json'), d='545674+545676+545677+659727', n=41620, nr=41620)
 terminals = get_category(*get_count('terminals.json'), q='terminals', n='42722')
 
-import sys
+import sys  # NOQA
 
 sys.exit()
 wire_protection = get_category(*get_count('wire_protection.json'), n=42374, nr=42374)
@@ -341,5 +345,5 @@ https://api.te.com/api/v1/search/service/search/products?o=0&s=20&nr=539832&n=53
 
 https://api.te.com/api/v1/search/service/search/products?o=0&s=20&nr=893246&n=893246&storeid=TEUSA&c=usa&l=en&st=web&mediaType=jsonns&dist_region=North+America
 GET
-	https://api.te.com/api/v1/search/service/search/products?o=0&s=20&nr=41621&n=41621&storeid=TEUSA&c=usa&l=en&st=web&mediaType=jsonns&dist_region=North America
+https://api.te.com/api/v1/search/service/search/products?o=0&s=20&nr=41621&n=41621&storeid=TEUSA&c=usa&l=en&st=web&mediaType=jsonns&dist_region=North America
 '''
