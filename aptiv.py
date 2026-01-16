@@ -1266,7 +1266,7 @@ field_mapping = {
     'itemcabletype_en': ('cable_type_id', str),
     'iteminterfacetype_en': ('interface_type_id', str),
     'itemtermmincablecrosssection_en': ('wire_cross_min', float),
-    'itemresource3ddrawings_en': ('model_3d_id', str),
+    'itemresource3ddrawings_en': ('model3d_id', str),
     'productresourcedatasheets_en': ('datasheet_id', lambda x: x.split(', ')),
     'itemresourcedrawings_en': ('cad_id', lambda x: x.split(', ')),
     'competitorpartapn_en': ('competitor_part_number', str),
